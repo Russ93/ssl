@@ -1,0 +1,33 @@
+<html>
+<head>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.js"></script>
+	<script type='text/javascript'>
+	$('document').ready(function(){
+		$('#city').keyup(function(){
+			var xmlhttp;
+			console.log(window.XMLHttpRequest)
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}
+
+			xmlhttp.onreadystatechange=function(){
+				if(xmlhttp.readyState==4 && xmlhttp.status==200){
+
+					$('#cityresponse').html(xmlhttp.responseText)
+					//document.getElementById('cityresponse').innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open('GET','cityresponse.php?cityget='+$(this).val(),true);
+			xmlhttp.send();
+		})// keyup
+	})// Document
+	</script>
+</head>
+<body>
+	<input type='text' name='city' id='city' placholder='enter city name' />
+	<div id='cityresponse'></div>
+
+
+</body>
+</html>
