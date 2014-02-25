@@ -1,0 +1,42 @@
+#form input{
+	width:300px;
+}
+
+#form{
+	max-width: 750px;
+	margin: 35px auto ;
+}
+#title{
+	max-width: 300px;
+	margin: 50px auto;
+}
+footer{
+	position: fixed;
+	top: 95%;
+	max-width: 370px;
+	margin: 0 35%;
+}
+#current{
+	float: left;
+	margin-top: 60px;
+	margin-left: 20px;
+	font-size: 25px; 
+}
+#temp{
+	clear: both;
+}
+#currentCity{
+	float: left;
+	margin-left: 15px;
+}
+#weather{
+	margin-left: 170px;
+}
+#degrees{
+	clear: left;
+	font-size: 100px;
+	float: left;
+}
+#city{
+	float: left;
+}
