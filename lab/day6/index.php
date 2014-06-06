@@ -4,11 +4,12 @@ session_start();
 $conn = new PDO('mysql:host=localhost;dbname=twitter;port=8889', 'root', 'root');
 
 //$_GET['call'] is for calls to the server insted of getting information
-
+// this is so no header information is passed through
 if(!isset($_GET['call'])){
 	include 'view/public/head.html';
 }
 
+// Determines which controller to use
 if(isset($_GET['controller'])){
 	$controller=trim($_GET['controller']);
 }elseif(isset($_SESSION['userId'])){
@@ -17,15 +18,15 @@ if(isset($_GET['controller'])){
 	$controller="public";
 }
 
-// elseif(isset($_SESSION['userId'])){$controller='users';}
-
+// implements the controller selected above
 if (file_exists("controller/".$controller."Controller.php")) {
 	include("controller/".$controller."Controller.php");
 } else {
-	//controller page does not exist, return 404
-	//include('404.php');
+	include('404.php');
 }
 
+//$_GET['call'] is for calls to the server insted of getting information
+// this is so no header information is passed through
 if(!isset($_GET['call'])){
 	echo '
 	</body>

@@ -34,8 +34,10 @@ $('document').ready(function(){
 	})
 	$('#getUsers').autocomplete({source:sourceArr})
 
-//	add Mesages
+//	CRUD for the messages
+// this is also in php just in case but I wanted to get creative
 	var rud = "<div id='close'></div><form method='get' id='pMsg' action='index.php' class='col-md-8 col-md-offset-2'><input type='hidden' name='call' value='true' /><label>Header</label><input type='text' name='header' id='header' class='form-control' /><label>Message</label><textarea name='message' id='msg' class='form-control'></textarea>"
+	// this create a message
 	$('#create').click(function(){
 		$('#pop').html(rud+"<input type='hidden' name='create' value='true' /><button class='btn btn-primary'>Save</button></form>");
 		$('#close').click(function(){$('#pop').empty()});
